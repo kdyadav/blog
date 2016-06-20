@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::resource('posts','PostController');
+Route::resource('categories','CategoryController');
+
+
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/register', function () {
+    return redirect('http://www.vkulp.com/auth/register');
+});

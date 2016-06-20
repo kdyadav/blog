@@ -14,4 +14,5 @@
 {!! Html::script('public/assets/scripts/retina.min.js') !!}
 {!! Html::script('public/assets/scripts/custom.js') !!}
 
- 
+ <!--  -->
+{!! Html::script('https://use.fontawesome.com/473269ba77.js') !!}

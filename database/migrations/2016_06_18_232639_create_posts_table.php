@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->longText('body');
             $table->tinyInteger('status');
             $table->integer('views');
+            $table->string('category');
+            $table->string('tags');
             $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();

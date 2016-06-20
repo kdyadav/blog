@@ -2354,7 +2354,45 @@ h2.head,
 
 
 
+/*----------------------------------------------------------------------------------------
+										LOGIN FORM
+----------------------------------------------------------------------------------------*/
 
+
+#login-form .form-group{margin:0;}
+
+#login-form .form-control{
+	padding:10px 5px;
+	font-size:inherit;
+	height:auto;
+}
+
+#login-form .form-group .btn{
+	border-radius:0;
+	font-size:inherit;
+	padding:10px;
+}
+
+#login-form .form-group input,
+#login-form .input-group input,
+#login-form .form-group textarea,
+#login-form button {
+	color: #222;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border: 1px solid #E6DEDE;
+	border-radius:0;
+}
+
+#login-form .input-group input:focus,
+#login-form .form-group input:focus,
+#login-form .form-group textarea:focus,
+#login-form .input-group button:focus {
+	box-shadow: none;
+	transition: none;
+	border: 1px solid #A0BBC8;
+	outline: 0;
+}
 
 /*----------------------------------------------------------------------------------------
 										SOCIAL
@@ -2509,3 +2547,42 @@ footer { padding: 80px 0; }
 #shortcodes .download-btn-alt{ margin:2px 0;}
 
 
+/*----------------------------------------------------------------------------------------
+										POST FORM
+----------------------------------------------------------------------------------------*/
+
+
+#post-form .form-group {margin:10px;}
+
+#post-form .form-control{
+	padding:10px 5px;
+	font-size:inherit;
+	height:auto;
+}
+
+#post-form .form-group .btn{
+	border-radius:0;
+	font-size:inherit;
+	padding:10px;
+}
+
+#post-form .form-group input,
+#post-form .input-group input,
+#post-form .form-group textarea,
+#post-form button {
+	color: #222;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border: 1px solid #E6DEDE;
+	border-radius:0;
+}
+
+#post-form .input-group input:focus,
+#post-form .form-group input:focus,
+#post-form .form-group textarea:focus,
+#post-form .input-group button:focus {
+	box-shadow: none;
+	transition: none;
+	border: 1px solid #A0BBC8;
+	outline: 0;
+}
