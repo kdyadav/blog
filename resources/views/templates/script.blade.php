@@ -1,6 +1,5 @@
 <!-- JavaScript -->
-
-{!! Html::script('public/assets/scripts/jquery-1.8.2.min.js') !!}
+{!! Html::script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') !!}
 {!! Html::script('public/assets/scripts/bootstrap.min.js') !!}
 {!! Html::script('public/assets/scripts/owl.carousel.min.js') !!}
 {!! Html::script('public/assets/scripts/jquery.validate.min.js') !!}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -26,7 +27,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.posts.new')->withCategories($categories);
+        $tags = Tag::all();
+        return view('admin.posts.new')->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -37,7 +39,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all(); 
+        dd($data);
     }
 
     /**

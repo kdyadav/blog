@@ -2586,3 +2586,45 @@ footer { padding: 80px 0; }
 	border: 1px solid #A0BBC8;
 	outline: 0;
 }
+
+
+
+/*----------------------------------------------------------------------------------------
+										CATEGORY FORM
+----------------------------------------------------------------------------------------*/
+
+
+#category-form .form-group {margin:10px;}
+
+#category-form .form-control{
+	padding:10px 5px;
+	font-size:inherit;
+	height:auto;
+}
+
+#category-form .form-group .btn{
+	border-radius:0;
+	font-size:inherit;
+	padding:10px;
+}
+
+#category-form .form-group input,
+#category-form .input-group input,
+#category-form .form-group textarea,
+#category-form button {
+	color: #222;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border: 1px solid #E6DEDE;
+	border-radius:0;
+}
+
+#category-form .input-group input:focus,
+#category-form .form-group input:focus,
+#category-form .form-group textarea:focus,
+#category-form .input-group button:focus {
+	box-shadow: none;
+	transition: none;
+	border: 1px scategory #A0BBC8;
+	outline: 0;
+}

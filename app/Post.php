@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    
+    protected $gaurded = [];
+
     public function user()
     {
     	return $this->belongsTo('App\User');
@@ -14,16 +17,8 @@ class Post extends Model
     {
    		return $this->hasMany('App\Like');
     }
-    public function tags()
-    {
-   		return $this->hasMany('App\Tag');
-    }
     public function images()
     {
    		return $this->hasMany('App\Image');
-    }
-    public function categories()
-    {
-   		return $this->hasMany('App\Category');
     }
 }

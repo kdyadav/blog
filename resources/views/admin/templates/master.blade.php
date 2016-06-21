@@ -6,8 +6,8 @@
 <!-- Html Page Specific -->
 <meta charset="utf-8">
 <title>vkulp @yield('title')</title>
-<meta name="description" content="RAY - App Landing Page">
-<meta name="author" content="Multifour | multifour.com">
+<meta name="description" content="">
+<meta name="author" content="">
 
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
 <![endif]-->
 
 <!-- CSS includes -->
-@include('templates.style')
+@include('admin.templates.style')
 
 <!-- Favicons -->
 <link rel="icon" href="images/favicon.png">
@@ -38,7 +38,7 @@
 <div id="wrap"> 
 
   	 <!-- includes -->
-     @include('templates.navigation')
+     @include('admin.templates.navigation')
      
      
      <!-- Contents Yields -->
@@ -46,8 +46,8 @@
      <!-- End Contents Yields -->
      
      <!-- includes -->
-     @include('templates.footer')
-  	 @include('templates.script')
+     @include('admin.templates.footer')
+  	 @include('admin.templates.script')
 
 <!--[if lte IE 9]>
 	<script src="scripts/respond.min.js"></script>

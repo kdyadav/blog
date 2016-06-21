@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('admin.categories.list')->withCategories($categories);
     }
 
     /**
@@ -25,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.new');
     }
 
     /**
@@ -36,7 +37,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only('name');
+        Category::create($data);
+        return redirect('categories');
     }
 
     /**
@@ -47,7 +50,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "show";
     }
 
     /**
@@ -58,7 +61,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.categories.update')->withCategory($category);
     }
 
     /**
@@ -70,7 +74,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only('name');
+        $category = Category::find($id);
+        $category->name =  $data['name'];
+        $category->update();
+        return redirect('categories');
     }
 
     /**
@@ -81,6 +89,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo "destroy";
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('categories');
     }
+
 }

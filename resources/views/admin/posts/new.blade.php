@@ -25,20 +25,22 @@
                 <select name="category" class="form-control">
                     <option value="">SELECT</option>
                     @foreach ($categories as $category)
-                    <option value="{{ $category->category }}">{{ $category->category }}</option>
+                    <option value="{{ $category->name }}">{{ $category->category }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="form-group">
                 {!! Form::label('Tags') !!}
-                {!! Form::text( 'tags', null, array( 'class'=>'form-control' ) ) !!}
+                {!! Form::text( 'tags', null, array( 'class'=>'form-control','id'=>'myTags' ) ) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('Body') !!}
                 {!! Form::textarea('body',null, array('class'=>'form-control','size'=>'50x3')) !!}
             </div>
-            <input name="tags" id="singleFieldTags2" value="Apple, Orange">
+            
+            
+
             {!! Form::token() !!}
 
             <div class="form-group">
