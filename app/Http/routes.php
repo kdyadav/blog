@@ -18,9 +18,10 @@ Route::get('/', function () {
 Route::resource('posts','PostController');
 Route::resource('categories','CategoryController');
 Route::resource('tags','TagController');
+Route::resource('images','ImageController');
 
 Route::auth();
 
-Route::get('/register', function () {
-    return redirect('http://www.vkulp.com/auth/register');
-});
+// Route::get('/register', function () {
+//     return redirect('http://www.vkulp.com/auth/register');
+// });

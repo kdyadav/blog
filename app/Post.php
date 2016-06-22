@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     
-    protected $gaurded = [];
+    protected $guarded = array('id');
 
     public function user()
     {

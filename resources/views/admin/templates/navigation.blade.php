@@ -6,8 +6,10 @@
 				<button class="navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<div class="collapse navbar-collapse navMenuCollapse">
 					<ul class="nav">
+						<li><a href="{{url('posts')}}">Posts</a></li>
 						<li><a href="{{url('categories')}}">Categories</a></li>
 						<li><a href="{{url('tags')}}">Tags</a></li>
+						<li><a href="{{url('images')}}">Images</a></li>
 					</ul>
 				</div>
 			</div>

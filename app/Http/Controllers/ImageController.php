@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
+use App\Image;
+use App\Post;
 use App\Http\Requests;
 
 class ImageController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        return view('admin.images.list')->withImages($images);
     }
 
     /**
@@ -25,7 +28,8 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        $posts = Post::all('id','title');
+        return view('admin.images.new')->withPosts($posts);
     }
 
     /**
@@ -36,7 +40,11 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only('filename','title','post_id');
+        $data['filename'] = 'dummy';
+        Image::create($data);
+
+        return redirect('images');
     }
 
     /**
@@ -58,7 +66,9 @@ class ImageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $image = Image::find($id);
+        $posts = Post::all('id','title');
+        return view('admin.images.update')->withPosts($posts)->withImage($image);
     }
 
     /**
@@ -70,7 +80,10 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only('filename','title');
+        $image = Image::find($id);
+        $image->update($data);
+        return redirect('images');
     }
 
     /**
@@ -81,6 +94,8 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $image = Image::find($id);
+        $image->delete();
+        return redirect('images');
     }
 }

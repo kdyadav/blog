@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    protected $gaurded = [];
+    
+	protected $fillable = [
+        'filename',
+        'title',
+        'post_id'
+    ];
     
     public function post()
     {

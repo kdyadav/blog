@@ -89,8 +89,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        $category = Tag::find($id);
-        $category->delete();
+        $tag = Tag::find($id);
+        $tag->delete();
         return redirect('tags');
     }
 }

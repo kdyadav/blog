@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use App\Category;
 use App\Tag;
+use App\Post;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -16,7 +18,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        
+        $posts = Post::all();
+        return view('admin.posts.list')->withPosts($posts);
     }
 
     /**
@@ -39,8 +42,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all(); 
-        dd($data);
+        $data = $request->only('title','body','category','tags');
+        $data['user_id'] = Auth::user()->id; 
+        $data['views'] = 0;  
+        Post::create($data);
+        return redirect('posts');
     }
 
     /**
@@ -62,7 +68,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('admin.posts.update')->withPost($post)->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -74,7 +83,10 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only('title','body','category','tags');
+        $post = Post::find($id);
+        $post->update($data);
+        return redirect('posts');
     }
 
     /**
@@ -85,6 +97,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('posts');
     }
 }
